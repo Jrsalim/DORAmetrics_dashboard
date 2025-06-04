@@ -1,0 +1,14 @@
+﻿17:06:23:696	Démarrage du package SSIS « C:\Users\ahmed\source\repos\pfesalim\gitlab_dwh.dtsx ».
+17:06:23:696	Informations : 0x4004300A à Tâche de flux de données, SSIS.Pipeline: Début de la phase Validation.
+17:06:24:014	Informations : 0x4004300A à Tâche de flux de données, SSIS.Pipeline: Début de la phase Validation.
+17:06:24:262	Avertissement : 0x80047076 à Tâche de flux de données, SSIS.Pipeline: La colonne de sortie « factgitlab_id » (38) à la sortie « Sortie de source OLE DB » (37) et dans le composant « Source OLE DB » (26) n’est pas utilisée par la suite dans la tâche de flux de données. La suppression de cette colonne de sortie inutile peut augmenter les performances de la tâche de flux de données.
+17:06:24:262	Informations : 0x40043006 à Tâche de flux de données, SSIS.Pipeline: Début de la phase Préparation à l’exécution.
+17:06:24:262	Informations : 0x40043007 à Tâche de flux de données, SSIS.Pipeline: Début de la phase Pré-exécution.
+17:06:24:262	Informations : 0x4004300C à Tâche de flux de données, SSIS.Pipeline: Début de la phase Exécuter.
+17:06:24:262	Informations : 0x402090DF à Tâche de flux de données, Destination OLE DB [2]: La validation finale de l'insertion de données dans « Destination OLE DB » a commencé.
+17:06:24:262	Informations : 0x402090E0 à Tâche de flux de données, Destination OLE DB [2]: La validation finale de l'insertion de données dans « Destination OLE DB » s'est terminée.
+17:06:24:262	Informations : 0x40043008 à Tâche de flux de données, SSIS.Pipeline: Début de la phase Post-exécution.
+17:06:24:262	Informations : 0x4004300B à Tâche de flux de données, SSIS.Pipeline:  « Destination OLE DB » a écrit 6224 lignes.
+17:06:24:262	Informations : 0x40043009 à Tâche de flux de données, SSIS.Pipeline: Début de la phase Nettoyage.
+17:06:24:262	Package SSIS « C:\Users\ahmed\source\repos\pfesalim\gitlab_dwh.dtsx » terminé : Succès.
+17:06:26:729	Le programme '[56856] DtsDebugHost.exe: DTS' s'est arrêté avec le code 0 (0x0).

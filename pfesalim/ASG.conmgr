@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ASG"
+  DTS:DTSID="{A3DFE304-DB0E-4056-952A-48AAE13FB17B}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=ASG;Initial Catalog=pfesalimstg;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-pfesalim-{A3DFE304-DB0E-4056-952A-48AAE13FB17B}ASG;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

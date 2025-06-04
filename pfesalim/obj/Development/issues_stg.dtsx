@@ -1,0 +1,2209 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2025 3:49:27 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ASG"
+  DTS:CreatorName="ASG\ahmed"
+  DTS:DTSID="{416CC5AF-A26C-43F8-B210-AEC6FB74663F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{0726B910-42EF-49EE-8591-339C7CD4196F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ASG.pfesalimdwh]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{77E2D193-EA99-4017-BEF6-05977060A38F}"
+      DTS:ObjectName="ASG.pfesalimdwh">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ASG;Initial Catalog=pfesalimdwh;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{77E2D193-EA99-4017-BEF6-05977060A38F}ASG.pfesalimdwh;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ASG.pfesalimstg]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ABD658D7-AD1E-4100-B30D-23D9460C6E07}"
+      DTS:ObjectName="ASG.pfesalimstg">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ASG;Initial Catalog=pfesalimstg;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{ABD658D7-AD1E-4100-B30D-23D9460C6E07}ASG.pfesalimstg;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{01D11661-EF3A-465A-B614-799A75EEF2BB}"
+      DTS:ObjectName="Gestionnaire de connexions de fichiers plats">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ahmed\OneDrive - ESPIMA\Bureau\jira\Nouveau dossier\issues.csv.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="issue_id"
+              DTS:DTSID="{39F2D5F7-9615-4146-A092-F684CBC2939C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summary"
+              DTS:DTSID="{85C3E966-69CD-47B6-85C8-440E6D68C081}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="issue_type"
+              DTS:DTSID="{FD3ABF63-E715-4E69-9B8A-56C661F38224}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{10C845DB-C1B8-4558-9BB5-4D0974E7D7B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="priority"
+              DTS:DTSID="{723BACF6-728C-4C15-AACA-B8BCC0A39E1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="assignee"
+              DTS:DTSID="{A46BBB6C-9052-4927-8816-6664F964870D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="reporter"
+              DTS:DTSID="{981CB60B-EE10-4E3C-9C9E-78B315AD7E85}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="created"
+              DTS:DTSID="{8A2B8DCC-859F-44B8-8EE8-7E2A29E1419C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="updated"
+              DTS:DTSID="{012EEDED-B20B-4707-8F47-6D6ADCD53719}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="resolved"
+              DTS:DTSID="{5C25837A-1AD5-48C5-ADA2-FDA76D4715FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="time_spent"
+              DTS:DTSID="{033B174C-8682-4FDD-B280-8976AFA41287}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="original_estimate"
+              DTS:DTSID="{71A8B72D-0641-4AF1-8FEA-75D748CAA19F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="remaining_estimate"
+              DTS:DTSID="{2E9CD95D-6034-45F9-9A4D-C4EBC0EF28AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="work_ratio"
+              DTS:DTSID="{CF71F569-C2E3-4E71-8EF9-AE34ED70921D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="story_points"
+              DTS:DTSID="{AB7CD18C-6B6F-4B6D-9B47-575B874623DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="story_point_estimate"
+              DTS:DTSID="{94CA6DA7-78EE-4540-96FA-D1113DA0116F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_category"
+              DTS:DTSID="{FD26D490-26DA-4ED3-9916-1F5ACFDE0C09}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_category_changed"
+              DTS:DTSID="{15287B3A-84E7-40B5-A1CF-6D2A86A519DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{0B760B48-A558-4801-9D3E-398F82F57F70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{7D2C85B9-2551-48D5-9A8D-DBF5184AA9B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_start"
+              DTS:DTSID="{D589348B-997C-4C2A-A0DF-1824B519E77D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_end"
+              DTS:DTSID="{41C2B4AA-628E-48C0-856C-9D4EEFF3F49C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_de_mise_en_production"
+              DTS:DTSID="{5036B2C1-7486-45C8-AD37-752101F27F53}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B51094FF-364E-40A1-861B-B461820E0AF0}"
+      DTS:ObjectName="Gestionnaire de connexions de fichiers plats 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ahmed\OneDrive - ESPIMA\Bureau\jira\Nouveau dossier\issues.csv.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="issue_id"
+              DTS:DTSID="{012C29AC-288A-45AA-B6A3-EA5D4914EADC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summary"
+              DTS:DTSID="{7F94B186-64D8-44AE-80FF-28A2C68ECDE4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="issue_type"
+              DTS:DTSID="{33C994BE-8786-4322-A103-BF3F1318D668}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{7BEDF515-A2BE-4A82-9639-19042CE0D4BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="priority"
+              DTS:DTSID="{E8D28FC7-3007-4BC4-9BEC-B7DE99719AC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="assignee"
+              DTS:DTSID="{D8C738E6-36F4-4A29-8FBE-C8E9234DF502}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="reporter"
+              DTS:DTSID="{0A097B36-D251-42F5-BB21-4EA7D9AD3AA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="created"
+              DTS:DTSID="{25713A4E-3D17-4AAE-B865-23463208CDBF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="updated"
+              DTS:DTSID="{BCDD93EF-17E8-40B1-B7E7-F3C84E634541}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="resolved"
+              DTS:DTSID="{CDB5245A-C8EC-4466-9BED-2B597BF03138}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="time_spent"
+              DTS:DTSID="{56E1399D-D55A-4CE9-AA5C-8FDD6482EEF8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="original_estimate"
+              DTS:DTSID="{8D40E447-F979-4045-97E2-36BB33AED756}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="remaining_estimate"
+              DTS:DTSID="{4FFE8FC4-894D-4E74-800E-A4CD966E9B07}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="work_ratio"
+              DTS:DTSID="{6F06C425-EAA0-4B2F-B7D1-37E2075FF889}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="story_points"
+              DTS:DTSID="{5CC86679-EF70-4CFF-8187-5BC969338D8E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="story_point_estimate"
+              DTS:DTSID="{C0C799DF-DD61-499E-ABF6-2E84C72B4484}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_category"
+              DTS:DTSID="{CF11179B-3828-48E3-9622-CF8DCA7E4D80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_category_changed"
+              DTS:DTSID="{30257967-4E58-4F4E-B502-313A80CFB4CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{753B9769-4EBE-4D30-B318-C4AE9B938E64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{085A52B5-804C-46ED-A34C-AABAFF15181F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_start"
+              DTS:DTSID="{00B299B9-7940-4849-A789-1E167939226A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_end"
+              DTS:DTSID="{90F359F1-9684-4CDC-B905-145C8355BFF5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_de_mise_en_production"
+              DTS:DTSID="{0EC119BE-BA29-41AA-9AEF-1903E588DEEA}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{31867665-98F6-452F-A0B4-3C70FE0B40A6}"
+      DTS:ObjectName="Gestionnaire de connexions de fichiers plats 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ahmed\OneDrive - ESPIMA\Bureau\jira\Nouveau dossier\Issues_avec_Summary_rempli.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="issue_id"
+              DTS:DTSID="{E14A6145-FEB7-45EA-8856-088154C19A64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summary"
+              DTS:DTSID="{A6843E60-4442-452B-8B28-6BC8F91B395B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="issue_type"
+              DTS:DTSID="{0BE7F79C-28B8-487B-8C08-8E70EE7D7510}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{6F679437-3A10-426C-801B-508F2E8F3346}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="priority"
+              DTS:DTSID="{02F68BD9-0D59-4C84-99EF-57A29D019696}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="assignee"
+              DTS:DTSID="{77A58DAE-4EFD-4EF6-BAF4-59F418B193A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="reporter"
+              DTS:DTSID="{8C14827A-9F65-4951-AF84-C3201CAEB193}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="created"
+              DTS:DTSID="{2D6396BB-3CEB-4BF8-99E1-8554DD89D780}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="updated"
+              DTS:DTSID="{215C1F36-96E9-41A7-AB68-D1DEF53F9347}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="resolved"
+              DTS:DTSID="{4C9027B1-F031-4ABF-BA40-F84C77FB00E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="time_spent"
+              DTS:DTSID="{B0180D61-D63D-44B2-B462-97B68075B506}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="original_estimate"
+              DTS:DTSID="{8DA46020-1CC8-4536-8DDE-31D14141DA47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="remaining_estimate"
+              DTS:DTSID="{C4F9917B-CDC5-4661-A90C-88661B5CF912}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="work_ratio"
+              DTS:DTSID="{E66D962A-D653-405C-BAF4-2AFFFFA09027}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="story_points"
+              DTS:DTSID="{52A1A29A-B257-4C70-BE17-40BF98A9029E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="story_point_estimate"
+              DTS:DTSID="{5FAE7B24-CC40-4BF5-A31A-4A6F945CD211}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_category"
+              DTS:DTSID="{F29638A6-8211-4CE0-94A0-EADF107E2FB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_category_changed"
+              DTS:DTSID="{0A16164B-689B-40E4-811E-189529F6C96F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{B460CA84-EE0C-4BAF-B134-EFABA56850B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{594AD7A8-6109-4610-8129-C7156D9C3E7E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_start"
+              DTS:DTSID="{1C13ADB6-7569-4C17-BC9B-19ADB3643C52}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_end"
+              DTS:DTSID="{318633BB-7DAF-408E-B956-C54E8D0B72AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_de_mise_en_production"
+              DTS:DTSID="{BE2F006F-9CEF-4A9E-A8D0-6B187FB97C0C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats 3]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1AEE8E18-32E1-4F96-9CD0-35BB2EA218B6}"
+      DTS:ObjectName="Gestionnaire de connexions de fichiers plats 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ahmed\OneDrive - ESPIMA\Bureau\jira\Nouveau dossier\Issues_avec_dates_format_es.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="issue_id"
+              DTS:DTSID="{185AC1BC-3645-4863-80B8-A9EB8C2A694A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summary"
+              DTS:DTSID="{8DC15405-E8C9-4162-9A76-6A9B5300C2EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="issue_type"
+              DTS:DTSID="{959774D3-DC56-4946-8B72-BF48A4409481}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{F3E672BB-43D6-43A3-BEFD-AC81C8D0A630}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="priority"
+              DTS:DTSID="{AC3CFA6A-3020-44A6-82B9-947930CD8F73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="assignee"
+              DTS:DTSID="{6B9DF332-53A9-4CA5-AF45-2ECD027CF2B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="reporter"
+              DTS:DTSID="{23F977E6-E1E5-483D-B299-6300F441476A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="created"
+              DTS:DTSID="{A4608A14-C374-47FF-A8AC-C31A1BB75E8A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="updated"
+              DTS:DTSID="{8AB7E4CC-597A-40DB-97D4-E52F164E0508}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="resolved"
+              DTS:DTSID="{495E8113-2B84-4F63-A955-B012910EF5D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="time_spent"
+              DTS:DTSID="{3658F4B5-E17D-4803-964D-7DB56EE3FE6A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="original_estimate"
+              DTS:DTSID="{A11606B7-B52A-473C-9520-ADE1D6CECA8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="remaining_estimate"
+              DTS:DTSID="{53279B1F-FC3A-45BD-8A21-BAD35AA12611}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="work_ratio"
+              DTS:DTSID="{9F2EDDDA-CF15-4050-B0C4-B15F08823C11}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="story_points"
+              DTS:DTSID="{5E03CE31-B58E-4A5D-B9AC-B1B987A17065}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="story_point_estimate"
+              DTS:DTSID="{3110360B-5F17-453D-9DDC-0DEBEC60524C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_category"
+              DTS:DTSID="{65468BE7-A1E3-4E30-85DF-F05B417A1493}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_category_changed"
+              DTS:DTSID="{D85A2E7B-60CB-4949-8597-4E0159A21323}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{10F70D36-D6B2-4E8D-97F5-DB3FB685C1E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{F2FA60C1-7024-4096-873A-B1D9ABB3226D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_start"
+              DTS:DTSID="{7E4D5988-68D6-49D9-80DC-0EF4F5AA4A62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_end"
+              DTS:DTSID="{04B87BEA-93C4-43FC-8411-005DD3A948CF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_de_mise_en_production"
+              DTS:DTSID="{ADE66A0E-ACD8-4957-B2C7-64F15E70E48D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats 4]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7F150EE1-6E2F-4A81-B6EE-6C2DFA186B98}"
+      DTS:ObjectName="Gestionnaire de connexions de fichiers plats 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ahmed\OneDrive - ESPIMA\Bureau\jira\Nouveau dossier\xxxxxx\Issues_Formatt_.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="issue_id"
+              DTS:DTSID="{B19A46FE-A882-4D27-B6D9-13B9EED0E985}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="summary"
+              DTS:DTSID="{375D01BA-904F-4882-8630-504D774BAD8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="issue_type"
+              DTS:DTSID="{5A560387-1E40-46A0-B831-3BA4F82A7DE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{E78B8028-5A1A-4B5A-88AE-0969B0483E15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="priority"
+              DTS:DTSID="{656F4A53-938F-47A5-BE06-099B407C4D8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="assignee"
+              DTS:DTSID="{5C50ED3E-FECE-481E-A410-963CD79E428E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="reporter"
+              DTS:DTSID="{6E781ADC-C7B1-45FE-9696-98FCAB1F9F3A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="created"
+              DTS:DTSID="{6C277CC3-B9FA-4525-BB06-B631A211128E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="updated"
+              DTS:DTSID="{6E91E777-E54D-49A5-A3DB-F4D24C06C67A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="resolved"
+              DTS:DTSID="{D0BD7B73-6EE1-4F1F-A953-01DE5CA21710}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="time_spent"
+              DTS:DTSID="{AA6FCEA5-944D-45C9-BCC3-7D61732E751A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="original_estimate"
+              DTS:DTSID="{A70E0531-449F-4FB7-B34D-552D7CB631C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="remaining_estimate"
+              DTS:DTSID="{DF01C888-D270-407B-B164-41030A47BE72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="work_ratio"
+              DTS:DTSID="{BC64B5B8-CDFC-4401-ADE8-B0E9E9440A73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="story_points"
+              DTS:DTSID="{D6CD7B13-0868-408D-B5B4-CA2986F6153A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="story_point_estimate"
+              DTS:DTSID="{963EF7D6-EE02-40C7-8BE1-C2AA2D014682}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_category"
+              DTS:DTSID="{A13B056D-E5F3-48CF-B308-90B52ED984A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status_category_changed"
+              DTS:DTSID="{2E14304F-C4FC-4B44-AE8E-C8E3C85BEBE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="start_date"
+              DTS:DTSID="{37E95406-6950-422E-AF4D-DC4B072049AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="end_date"
+              DTS:DTSID="{8AD8CB39-04FE-4000-9829-053DAF04F2B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_start"
+              DTS:DTSID="{DB239C35-F643-443E-A3C1-9614C64ABCAF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="actual_end"
+              DTS:DTSID="{34A22604-29B0-48CE-AE24-8FDE202E840A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_de_mise_en_production"
+              DTS:DTSID="{ECDD3D51-8ABD-412A-8674-6DCEB3E181E0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tâche d'exécution de requêtes SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{BB2D4B3E-195B-492C-A0D5-2B8F56B2FE71}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche d'exécution de requêtes SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A3DFE304-DB0E-4056-952A-48AAE13FB17B}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.dimissues;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tâche de flux de données"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{6DBB1348-B0AC-4F5B-AFA3-006E144B6F8A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche de flux de données"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tâche de flux de données\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[dimissues]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ASG.pfesalimstg]"
+                  connectionManagerRefId="Package.ConnectionManagers[ASG.pfesalimstg]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[issue_id]"
+                      cachedDataType="ui4"
+                      cachedName="issue_id"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[issue_id]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[issue_id]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[summary]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="summary"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[summary]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[summary]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[issue_type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="issue_type"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[issue_type]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[issue_type]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[status]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[status]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[priority]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="priority"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[priority]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[priority]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[assignee]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="assignee"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[assignee]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[assignee]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[reporter]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="reporter"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reporter]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[reporter]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[created]"
+                      cachedDataType="ui4"
+                      cachedName="created"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[created]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[created]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[updated]"
+                      cachedDataType="date"
+                      cachedName="updated"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[updated]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[updated]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[resolved]"
+                      cachedDataType="date"
+                      cachedName="resolved"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[resolved]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[resolved]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[story_points]"
+                      cachedDataType="ui4"
+                      cachedName="story_points"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[story_points]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[story_points]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[story_point_estimate]"
+                      cachedDataType="ui4"
+                      cachedName="story_point_estimate"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[story_point_estimate]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[story_point_estimate]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[status_category]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="status_category"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[status_category]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[status_category]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[status_category_changed]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="status_category_changed"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[status_category_changed]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[status_category_changed]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[start_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="start_date"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[start_date]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[start_date]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[end_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="end_date"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[end_date]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[end_date]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[actual_start]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="actual_start"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[actual_start]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[actual_start]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[actual_end]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="actual_end"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[actual_end]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[actual_end]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[date_de_mise_en_production]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="date_de_mise_en_production"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_de_mise_en_production]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[date_de_mise_en_production]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[time_spent]"
+                      cachedDataType="ui4"
+                      cachedName="time_spent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[time_spent_in_seconds]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[time_spent]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[original_estimate]"
+                      cachedDataType="ui4"
+                      cachedName="original_estimate"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[original_estimate_in_seconds]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[original_estimate]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[remaining_estimate]"
+                      cachedDataType="ui4"
+                      cachedName="remaining_estimate"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[remaining_estimate_in_seconds]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[remaining_estimate]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[work_ratio]"
+                      cachedDataType="ui4"
+                      cachedName="work_ratio"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[work_ratio_percentage]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[work_ratio]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[issue_id]"
+                      dataType="i4"
+                      name="issue_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[summary]"
+                      dataType="wstr"
+                      length="500"
+                      name="summary" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[issue_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="issue_type" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="50"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[priority]"
+                      dataType="wstr"
+                      length="50"
+                      name="priority" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[assignee]"
+                      dataType="wstr"
+                      length="100"
+                      name="assignee" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reporter]"
+                      dataType="wstr"
+                      length="100"
+                      name="reporter" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[created]"
+                      dataType="i4"
+                      name="created" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[updated]"
+                      dataType="dbDate"
+                      name="updated" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[resolved]"
+                      dataType="dbDate"
+                      name="resolved" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[time_spent_in_seconds]"
+                      dataType="i4"
+                      name="time_spent_in_seconds" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[original_estimate_in_seconds]"
+                      dataType="i4"
+                      name="original_estimate_in_seconds" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[remaining_estimate_in_seconds]"
+                      dataType="i4"
+                      name="remaining_estimate_in_seconds" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[work_ratio_percentage]"
+                      dataType="i4"
+                      name="work_ratio_percentage" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[story_points]"
+                      dataType="i4"
+                      name="story_points" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[story_point_estimate]"
+                      dataType="i4"
+                      name="story_point_estimate" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[status_category]"
+                      dataType="wstr"
+                      length="50"
+                      name="status_category" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[status_category_changed]"
+                      dataType="dbTimeStamp"
+                      name="status_category_changed" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[start_date]"
+                      dataType="dbTimeStamp"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[end_date]"
+                      dataType="dbTimeStamp"
+                      name="end_date" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[actual_start]"
+                      dataType="dbTimeStamp"
+                      name="actual_start" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[actual_end]"
+                      dataType="dbTimeStamp"
+                      name="actual_end" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_de_mise_en_production]"
+                      dataType="dbTimeStamp"
+                      name="date_de_mise_en_production" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Source du fichier plat"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1036"
+              name="Source du fichier plat"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Source du fichier plat.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats 4]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats 4]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[issue_id]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[issue_id]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[issue_id]"
+                      name="issue_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[summary]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[summary]"
+                      length="500"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[summary]"
+                      name="summary"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[issue_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[issue_type]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[issue_type]"
+                      name="issue_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[status]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[priority]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[priority]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[priority]"
+                      name="priority"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[assignee]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[assignee]"
+                      length="100"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[assignee]"
+                      name="assignee"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[reporter]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[reporter]"
+                      length="100"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[reporter]"
+                      name="reporter"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[created]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[created]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[created]"
+                      name="created"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[updated]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[updated]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[updated]"
+                      name="updated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[resolved]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[resolved]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[resolved]"
+                      name="resolved"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[time_spent]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[time_spent]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[time_spent]"
+                      name="time_spent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[original_estimate]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[original_estimate]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[original_estimate]"
+                      name="original_estimate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[remaining_estimate]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[remaining_estimate]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[remaining_estimate]"
+                      name="remaining_estimate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[work_ratio]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[work_ratio]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[work_ratio]"
+                      name="work_ratio"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[story_points]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[story_points]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[story_points]"
+                      name="story_points"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[story_point_estimate]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[story_point_estimate]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[story_point_estimate]"
+                      name="story_point_estimate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[status_category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[status_category]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[status_category]"
+                      name="status_category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[status_category_changed]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[status_category_changed]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[status_category_changed]"
+                      name="status_category_changed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[start_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[start_date]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[start_date]"
+                      name="start_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[end_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[end_date]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[end_date]"
+                      name="end_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[actual_start]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[actual_start]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[actual_start]"
+                      name="actual_start"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[actual_end]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[actual_end]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[actual_end]"
+                      name="actual_end"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[date_de_mise_en_production]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[date_de_mise_en_production]"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].Columns[date_de_mise_en_production]"
+                      name="date_de_mise_en_production"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[issue_id]"
+                      dataType="ui4"
+                      name="issue_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[summary]"
+                      dataType="wstr"
+                      length="500"
+                      name="summary" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[issue_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="issue_type" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="50"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[priority]"
+                      dataType="wstr"
+                      length="50"
+                      name="priority" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[assignee]"
+                      dataType="wstr"
+                      length="100"
+                      name="assignee" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[reporter]"
+                      dataType="wstr"
+                      length="100"
+                      name="reporter" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[created]"
+                      dataType="ui4"
+                      name="created" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[updated]"
+                      dataType="date"
+                      name="updated" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[resolved]"
+                      dataType="date"
+                      name="resolved" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[time_spent]"
+                      dataType="ui4"
+                      name="time_spent" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[original_estimate]"
+                      dataType="ui4"
+                      name="original_estimate" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[remaining_estimate]"
+                      dataType="ui4"
+                      name="remaining_estimate" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[work_ratio]"
+                      dataType="ui4"
+                      name="work_ratio" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[story_points]"
+                      dataType="ui4"
+                      name="story_points" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[story_point_estimate]"
+                      dataType="ui4"
+                      name="story_point_estimate" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[status_category]"
+                      dataType="wstr"
+                      length="50"
+                      name="status_category" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[status_category_changed]"
+                      dataType="dbTimeStamp"
+                      name="status_category_changed" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[start_date]"
+                      dataType="dbTimeStamp"
+                      name="start_date" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[end_date]"
+                      dataType="dbTimeStamp"
+                      name="end_date" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[actual_start]"
+                      dataType="dbTimeStamp"
+                      name="actual_start" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[actual_end]"
+                      dataType="dbTimeStamp"
+                      name="actual_end" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat].ExternalColumns[date_de_mise_en_production]"
+                      dataType="dbTimeStamp"
+                      name="date_de_mise_en_production" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de source de fichier plat]"
+              endId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Tâche de flux de données\Source du fichier plat.Outputs[Sortie de source de fichier plat]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Tâche de flux de données"
+          TopLeft="143.5,85.5" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Tâche d'exécution de requêtes SQL"
+          TopLeft="117,17" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tâche de flux de données">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Tâche de flux de données\Source du fichier plat"
+          TopLeft="148,64" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Tâche de flux de données\Destination OLE DB"
+          TopLeft="322,183" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de source de fichier plat]"
+          TopLeft="237.5,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170,77"
+              Start="0,0"
+              End="170,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="4,38.5" />
+                  <mssgle:LineSegment
+                    End="166,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="166,38.5"
+                    Point2="170,38.5"
+                    Point3="170,42.5" />
+                  <mssgle:LineSegment
+                    End="170,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
